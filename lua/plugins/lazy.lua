@@ -57,6 +57,11 @@ require("lazy").setup({
 
 	{ "m4xshen/autoclose.nvim" },
 
+	-- latex
+
+	{ "lervag/vimtex" },
+	{ "vigoux/ltex-ls.nvim" },
+
 	-- discord presence
 
 	{ "andweeb/presence.nvim" },
@@ -68,12 +73,11 @@ require("lazy").setup({
 	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "L3MON4D3/LuaSnip" },
-
 })
 
 require("bufferline").setup{}
-
-require("autoclose").setup()
+-- require("ltex-ls").setup{}
+require("autoclose").setup{}
 
 local lspconfig = require('lspconfig')
 
@@ -85,7 +89,8 @@ local servers = {
 	"lua_ls",
 	"tsserver",
 	"rust_analyzer",
-	"clangd"
+	"clangd",
+	"ltex"
 }
 
 for _, lsp in ipairs(servers) do
